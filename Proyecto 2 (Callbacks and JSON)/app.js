@@ -1,5 +1,5 @@
 
-// Datos iniciales de libros en formato JSON
+// Objeto que representa la biblioteca, con una lista inicial de libros
 let biblioteca = {
     "libros": [
         { "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "disponible": true },
@@ -7,12 +7,15 @@ let biblioteca = {
     ]
 };
 
+// En esta funcion se simula la lectura de datos de la biblioteca después de 1 segundo y se llama al callback pasándole el objeto `biblioteca`
+
 function leerDatos(callback) {
     setTimeout(() => {
         callback(biblioteca);
     }, 1000);
 }
 
+// Con esta funcion se muestran en consola todos los libros de la biblioteca se utiliza `leerDatos` para obtener los libros y su indice simulando un acceso asíncrono
 function mostrarLibros() {
     leerDatos((datos) => {
         console.log("Inventario de libros:");
@@ -22,6 +25,8 @@ function mostrarLibros() {
     });
 }
 
+// En esta funcion se agrega un nuevo libro a la biblioteca después de 3 segundos
+
 function agregarLibro(titulo, autor, genero, disponible) {
     const nuevoLibro = { titulo, autor, genero, disponible };
     setTimeout(() => {
@@ -30,6 +35,7 @@ function agregarLibro(titulo, autor, genero, disponible) {
     }, 3000);
 }
 
+// En esta funcion se actualiza la disponibilidad de un libro según su título se ejecuta después de 5 segundos
 function actualizarDisponibilidad(titulo, nuevoEstado) {
     setTimeout(() => {
         const libro = biblioteca.libros.find(libro => libro.titulo ===titulo);
