@@ -7,3 +7,7 @@
 ### Proyecto 2
 
 #### En este proyecto se trato el tema de Callbacks y JSON con la idea de comprender el funcionamieto de los Callbacks y la importancia y sintaxis del formato JSON como una herramienta utilizada en JavaScript para el almacenamiento y transferencia de datos.
+
+## Proyecto 3
+
+### En este proyecto se utilizaron fetch y axios para realizar peticiones http a una api (en este caso las peticiones se hicieron a la api de pokemon) con el objetivo de entender el funcionamiento de estas herramientas e identificar sus diferencias.
