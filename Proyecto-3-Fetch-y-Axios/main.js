@@ -1,50 +1,63 @@
 // Implementa las Solicitudes con Fetch
-const fetchBtn = document.getElementById('fetch-btn');
-const dataContainer = document.getElementById('data-container');
+const fetchBtn = document.getElementById("fetch-btn");
+const dataContainer = document.getElementById("data-container");
 
-fetchBtn.addEventListener('click', () => {
-  fetch('https://rickandmortyapi.com/api/character')
-    .then(response => {
+
+// En esta funcion se obtienen los datos de la api utilizando fetch
+fetchBtn.addEventListener("click", () => {
+  fetch("https://pokeapi.co/api/v2/pokemon?limit=50&offset=100")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Error en la solicitud');
+        throw new Error("Error en la solicitud");
       }
       return response.json();
     })
-    .then(data => {
-      // ✅ Completar: renderizar datos en el contenedor
+    .then((data) => {
       renderCharacters(data.results);
     })
-    .catch(error => {
-      console.error('Error:', error);
-      dataContainer.textContent = 'Hubo un error al obtener los datos.';
-    });
+    .catch((error) => {
+      console.error("Error:", error);
+      dataContainer.textContent = "Hubo un error al obtener los datos.";
+    })
 });
 
-// Implementa las Solicitudes con Axios
-const axiosBtn = document.getElementById('axios-btn');
 
-axiosBtn.addEventListener('click', () => {
-  axios.get('https://rickandmortyapi.com/api/character')
-    .then(response => {
+// En esta funcion se obtienen los datos de la api utilizando axios
+const axiosBtn = document.getElementById("axios-btn");
+
+axiosBtn.addEventListener("click", () => {
+  axios
+    .get("https://pokeapi.co/api/v2/pokemon?limit=50&offset=100")
+    .then((response) => {
       const data = response.data;
-      // ✅ Completar: renderizar datos en el contenedor
       renderCharacters(data.results);
     })
-    .catch(error => {
-      console.error('Error:', error);
-      dataContainer.textContent = 'Hubo un error al obtener los datos.';
+    .catch((error) => {
+      console.error("Error:", error);
+      dataContainer.textContent = "Hubo un error al obtener los datos.";
     });
 });
 
-// Ejemplo de función de renderizado:
+
+// Funcion para renderizar las tarjetas de los pokemon obtenidos desde la api
 function renderCharacters(characters) {
-  dataContainer.innerHTML = '';
-  characters.forEach(character => {
-    const characterElement = document.createElement('div');
-    characterElement.innerHTML = `
-      <h3>${character.name}</h3>
-      <img src="${character.image}" alt="${character.name}">
-    `;
-    dataContainer.appendChild(characterElement);
+  dataContainer.innerHTML = "";
+  characters.forEach((character) => {
+    fetch(character.url)
+      .then((response) => response.json())
+      .then((pokeData) => {
+        const name = pokeData.name;
+        const types = pokeData.types.map((t) => t.type.name).join(", ");
+        const sprite = pokeData.sprites.front_default;
+        const characterElement = document.createElement("div");
+
+        characterElement.innerHTML = `
+          <h3>${name.charAt(0).toUpperCase() + name.slice(1)}</h3>
+          <img src="${sprite}" alt="${name}">
+          <span class="type-name">${types}</span>
+        `;
+        dataContainer.appendChild(characterElement);
+      })
+      .catch((error) => console.error("Error al cargar sprite:", error));
   });
 }
