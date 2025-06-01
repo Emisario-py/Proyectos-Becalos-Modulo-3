@@ -10,4 +10,16 @@
 
 ### Proyecto 3
 
-### En este proyecto se utilizaron fetch y axios para realizar peticiones http a una api (en este caso las peticiones se hicieron a la api de pokemon) con el objetivo de entender el funcionamiento de estas herramientas e identificar sus diferencias.
+#### En este proyecto se utilizaron fetch y axios para realizar peticiones http a una api (en este caso las peticiones se hicieron a la api de pokemon) con el objetivo de entender el funcionamiento de estas herramientas e identificar sus diferencias.
+
+### Proyecto 4
+
+#### En este proyecto se trabajo con los conceptos de async/await y promesas los cuales son conceptos fundamentales para cualquier programador de JavaScript Moderno ya que permite la facil creacion de apliaciones web mas complejas y eficientes.
+
+### Proyecto 5
+
+#### En este proyecto se practico el manejo de formularios realizando la creacion y validacion de uno. Se hicieron validaciones mas especificas utilizando JavaScript.
+
+### Proyecto 6
+
+#### En este proyecto se trabajo la validacion automatica de formularios utilizando la biblioteca "zod" para explorar su funcionamiento.
