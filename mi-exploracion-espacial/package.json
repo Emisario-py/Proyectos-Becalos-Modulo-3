@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "explorar": "node index.js"
-},
+    "explorar": "node index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cowsay": "^1.6.0"
+  }
 }
