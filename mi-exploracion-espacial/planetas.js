@@ -34,7 +34,6 @@ const planetas = [
     descripcion: "El primer exoplaneta observado en tránsito, también conocido como Osiris.",
     descubiertoEn: "1999"
   }
-  // ¡Añade más planetas!
 ];
 
 module.exports = planetas;

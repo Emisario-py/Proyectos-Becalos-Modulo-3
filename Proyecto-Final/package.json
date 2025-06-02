@@ -1,16 +1,16 @@
 {
-  "name": "mi-exploracion-espacial",
+  "name": "proyecto-final",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "explorar": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cowsay": "^1.6.0",
-    "mi-exploracion-espacial": "file:"
+    "proyecto-final": "file:",
+    "zod": "^3.25.23"
   }
 }
