@@ -44,10 +44,12 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+/* Actualizar el estado "done" de un todo (PATCH /api/todos/:id) */
 router.patch('/:id', (req, res) => {
     const { id } = req.params;
     const { done } = req.body;
 
+    // Validar que "done" sea 0 o 1
     if (![0, 1].includes(done)) {
         return res.status(400).json({ error: "'done' debe ser 0 o 1" });
     }
@@ -62,6 +64,5 @@ router.patch('/:id', (req, res) => {
         res.json({ message: 'Tarea actualizada correctamente', id, done });
     });
 });
-
 
 module.exports = router;

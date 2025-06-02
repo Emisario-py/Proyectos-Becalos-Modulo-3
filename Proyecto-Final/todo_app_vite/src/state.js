@@ -35,12 +35,13 @@ export async function addTodo(item) {
     }
 }
 
-export async function toggleDone(index) {
+export async function toggleDone(id, currentDone) {
+    const newDone = currentDone === 1 ? 0 : 1;
     try {
-        const response = await axios.patch(`${BASE_URL_API}/todos/${index}`);
-        return response.data;
+        const response = await axios.patch(`${BASE_URL_API}/todos/${id}`, { done: newDone });
+        return response.data; // debería devolver { id, done: newDone }
     } catch (err) {
-        console.error("Error al actualizar el estado del TODO:", err);
+        console.log("Error al cambiar el estado de 'done':", err);
         return {};
     }
 }

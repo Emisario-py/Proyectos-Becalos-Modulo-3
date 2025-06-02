@@ -1,0 +1,55 @@
+body {
+  background-color: #fff1f0; /* fondo suave rosado */
+}
+
+.card {
+  background-color: #ffeaea; /* cartas con fondo claro rosado */
+  border: 1px solid #f5c2c7;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.05);
+}
+
+.btn-primary {
+  background-color: #b33939; /* rojo vino */
+  border-color: #b33939;
+}
+
+.btn-primary:hover {
+  background-color: #8f2d2d;
+  border-color: #8f2d2d;
+}
+
+.btn-success {
+  background-color: #e55039; /* rojo coral */
+  border-color: #e55039;
+}
+
+.btn-success:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}
+
+.btn-outline-success {
+  color: #eb2f06; /* rojo vivo */
+  border-color: #eb2f06;
+}
+
+.btn-outline-success:hover {
+  background-color: #eb2f06;
+  color: #fff;
+}
+
+.list-group-item.done {
+  background-color: #ffd6d6; /* fondo para tarea completada */
+}
+
+.input-group-text {
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.form-control:focus {
+  border-color: #e55039;
+  box-shadow: 0 0 0 0.2rem rgba(229, 80, 57, 0.25);
+}
+
+span{}
